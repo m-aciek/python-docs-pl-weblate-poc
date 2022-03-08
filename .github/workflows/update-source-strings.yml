@@ -1,0 +1,47 @@
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  push:
+    branches:
+      - '*'
+jobs:
+  update-source-strings:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [3.8, 3.9, '3.10']
+    steps:
+      - uses: actions/setup-python@master
+        with:
+          python-version: '3.10'
+      - run: pip install sphinx-intl
+      - uses: actions/checkout@master
+        with:
+          repository: python/cpython
+          ref: ${{ matrix.version }}
+      - run: make venv
+        working-directory: ./Doc
+      - run: python -m sphinx -b gettext . _build/gettext
+        working-directory: ./Doc
+      - uses: actions/checkout@master
+        with:
+          ref: ${{ matrix.version }}
+          path: Doc/locales/pl/LC_MESSAGES
+      - run: git pull
+        working-directory: ./Doc/locales/pl/LC_MESSAGES
+      - run: sphinx-intl update -p _build/gettext -l pl
+        working-directory: ./Doc
+      - run: git config --local user.email 'maciej.olko@gmail.com'
+        name: Run git config --local user.email '…'
+        working-directory: ./Doc/locales/pl/LC_MESSAGES
+      - run: git config --local user.name "GitHub Action's update-source-strings job"
+        working-directory: ./Doc/locales/pl/LC_MESSAGES
+      - run: git add .
+        working-directory: ./Doc/locales/pl/LC_MESSAGES
+      - run: git commit -m 'Update translation source strings' || true
+        working-directory: ./Doc/locales/pl/LC_MESSAGES
+      - uses: ad-m/github-push-action@master
+        with:
+          branch: ${{ matrix.version }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: ./Doc/locales/pl/LC_MESSAGES
