@@ -31,7 +31,7 @@ jobs:
           path: Doc/locales/pl/LC_MESSAGES
       - run: git pull
         working-directory: ./Doc/locales/pl/LC_MESSAGES
-      - run: sphinx-intl update -p _build/gettext -l pl
+      - run: sphinx-intl update -p _build/gettext -l pl -w 79
         working-directory: ./Doc
       - run: git config --local user.email 'maciej.olko@gmail.com'
         name: Run git config --local user.email '…'
