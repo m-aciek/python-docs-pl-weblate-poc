@@ -19,6 +19,8 @@ jobs:
         with:
           repository: python/cpython
           ref: ${{ matrix.version }}
+      - run: echo -e "\ngettext_compact = False\n" >> conf.py
+        working-directory: ./Doc
       - run: make venv
         working-directory: ./Doc
       - run: python -m sphinx -b gettext . _build/gettext
