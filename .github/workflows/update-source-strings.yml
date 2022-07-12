@@ -33,6 +33,7 @@ jobs:
         working-directory: ./Doc/locales/pl/LC_MESSAGES
       - run: sphinx-intl update -p _build/gettext -l pl -w 79
         working-directory: ./Doc
+      - run: sudo apt-get install -y gettext
       - run: ./manage_translation.py remove_source_lines
         working-directory: ./Doc/locales/pl/LC_MESSAGES
       - run: git config --local user.email 'maciej.olko@gmail.com'
