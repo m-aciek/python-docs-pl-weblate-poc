@@ -11,6 +11,7 @@
 #          files.
 # * recreate_readme: recreate readme to update translation progress.
 # * regenerate_tx_config: recreate configuration for all resources.
+# * remove_source_lines: remove source lines for all resources.
 
 from argparse import ArgumentParser
 from collections import Counter
@@ -37,6 +38,10 @@ def fetch():
     )
     if pull_returncode != 0:
         exit(pull_returncode)
+    remove_source_lines()
+
+
+def remove_source_lines():
     for root, _, po_files in os.walk('.'):
         for po_file in po_files:
             if not po_file.endswith(".po"):
@@ -210,7 +215,7 @@ Wyrażasz akceptację tej umowy przesyłając swoją pracę do włączenia do do
 
 
 if __name__ == "__main__":
-    RUNNABLE_SCRIPTS = ('fetch', 'recreate_tx_config', 'recreate_readme')
+    RUNNABLE_SCRIPTS = ('fetch', 'recreate_tx_config', 'recreate_readme', 'remove_source_lines')
 
     parser = ArgumentParser()
     parser.add_argument('cmd', nargs=1, choices=RUNNABLE_SCRIPTS)
