@@ -1,29 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2001-2022, Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 # Translators:
 # Stefan Ocetkiewicz <stefan.ocetkiewicz@gmail.com>, 2022
 # Krzysztof Abramowicz, 2022
 # Maciej Olko <maciej.olko@gmail.com>, 2022
-#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-16 06:28+0000\n"
+"POT-Creation-Date: 2022-07-17 22:20+0000\n"
 "PO-Revision-Date: 2021-06-28 00:52+0000\n"
 "Last-Translator: Maciej Olko <maciej.olko@gmail.com>, 2022\n"
-"Language-Team: Polish (https://www.transifex.com/python-doc/teams/5390/pl/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
+"Language-Team: Polish (https://www.transifex.com/python-doc/teams/5390/pl/)\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
 
 msgid "Programming FAQ"
 msgstr "FAQ - programowanie"
@@ -104,8 +104,9 @@ msgid "Are there tools to help find bugs or perform static analysis?"
 msgstr ""
 
 msgid ""
-"`Pylint <https://www.pylint.org/>`_ and `Pyflakes <https://github.com/PyCQA/"
-"pyflakes>`_ do basic checking that will help you catch bugs sooner."
+"`Pylint <https://pylint.pycqa.org/en/latest/index.html>`_ and `Pyflakes "
+"<https://github.com/PyCQA/pyflakes>`_ do basic checking that will help you "
+"catch bugs sooner."
 msgstr ""
 
 msgid ""
@@ -339,7 +340,7 @@ msgid ""
 "directory) -- e.g. mx.DateTime, ZODB, PIL.Image, etc."
 msgstr ""
 
-msgid "locally-developed modules"
+msgid "locally developed modules"
 msgstr ""
 
 msgid ""
@@ -451,9 +452,9 @@ msgstr "Jaka jest różnica pomiędzy argumentami a parametrami?"
 msgid ""
 ":term:`Parameters <parameter>` are defined by the names that appear in a "
 "function definition, whereas :term:`arguments <argument>` are the values "
-"actually passed to a function when calling it.  Parameters define what types "
-"of arguments a function can accept.  For example, given the function "
-"definition::"
+"actually passed to a function when calling it.  Parameters define what :term:"
+"`kind of arguments <parameter>` a function can accept.  For example, given "
+"the function definition::"
 msgstr ""
 
 msgid ""
@@ -739,7 +740,7 @@ msgstr ""
 msgid ""
 "A slash in the argument list of a function denotes that the parameters prior "
 "to it are positional-only.  Positional-only parameters are the ones without "
-"an externally-usable name.  Upon calling a function that accepts positional-"
+"an externally usable name.  Upon calling a function that accepts positional-"
 "only parameters, arguments are mapped to parameters based solely on their "
 "position. For example, :func:`divmod` is a function that accepts positional-"
 "only parameters. Its documentation looks like this::"
@@ -1931,6 +1932,7 @@ msgid ""
 "re-reading of a changed module, do this::"
 msgstr ""
 
+#, python-format
 msgid ""
 "Warning: this technique is not 100% fool-proof.  In particular, modules "
 "containing statements like ::"

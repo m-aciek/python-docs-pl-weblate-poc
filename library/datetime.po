@@ -1,29 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2001-2022, Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 # Translators:
 # Maciej Olko <maciej.olko@gmail.com>, 2021
 # Seweryn Piórkowski <seweryn.piorkowski@gmail.com>, 2021
 # Michał Biliński <m.bilinskimichal@gmail.com>, 2021
-#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-16 06:28+0000\n"
+"POT-Creation-Date: 2022-07-17 22:20+0000\n"
 "PO-Revision-Date: 2021-06-28 01:04+0000\n"
 "Last-Translator: Michał Biliński <m.bilinskimichal@gmail.com>, 2021\n"
-"Language-Team: Polish (https://www.transifex.com/python-doc/teams/5390/pl/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
+"Language-Team: Polish (https://www.transifex.com/python-doc/teams/5390/pl/)\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
 
 msgid ":mod:`datetime` --- Basic date and time types"
 msgstr ""
@@ -2089,6 +2089,7 @@ msgstr ""
 msgid "0, 1, ..., 6"
 msgstr ""
 
+#, python-format
 msgid "``%d``"
 msgstr ""
 
@@ -2200,6 +2201,7 @@ msgstr ""
 msgid "\\(4), \\(9)"
 msgstr ""
 
+#, python-format
 msgid "``%f``"
 msgstr ""
 
@@ -2268,6 +2270,7 @@ msgid ""
 "considered to be in week 0."
 msgstr ""
 
+#, python-format
 msgid "``%c``"
 msgstr ""
 
@@ -2280,6 +2283,7 @@ msgstr ""
 msgid "Di 16 Aug 21:30:00 1988 (de_DE)"
 msgstr ""
 
+#, python-format
 msgid "``%x``"
 msgstr ""
 
@@ -2295,6 +2299,7 @@ msgstr ""
 msgid "16.08.1988 (de_DE)"
 msgstr ""
 
+#, python-format
 msgid "``%X``"
 msgstr ""
 
@@ -2307,6 +2312,7 @@ msgstr ""
 msgid "21:30:00 (de_DE)"
 msgstr ""
 
+#, python-format
 msgid "``%%``"
 msgstr ""
 
@@ -2321,6 +2327,7 @@ msgid ""
 "for convenience. These parameters all correspond to ISO 8601 date values."
 msgstr ""
 
+#, python-format
 msgid "``%G``"
 msgstr ""
 
@@ -2332,6 +2339,7 @@ msgstr ""
 msgid "\\(8)"
 msgstr ""
 
+#, python-format
 msgid "``%u``"
 msgstr ""
 
@@ -2372,6 +2380,7 @@ msgid ""
 "unsupported format specifiers."
 msgstr ""
 
+#, python-format
 msgid "``%G``, ``%u`` and ``%V`` were added."
 msgstr ""
 
@@ -2455,6 +2464,7 @@ msgid ""
 "leap seconds."
 msgstr ""
 
+#, python-format
 msgid ""
 "When used with the :meth:`strptime` method, the ``%f`` directive accepts "
 "from one to six digits and zero pads on the right. ``%f`` is an extension to "
@@ -2523,6 +2533,7 @@ msgid ""
 "specified."
 msgstr ""
 
+#, python-format
 msgid ""
 "Similar to ``%U`` and ``%W``, ``%V`` is only used in calculations when the "
 "day of the week and the ISO year (``%G``) are specified in a :meth:"
@@ -2530,6 +2541,7 @@ msgid ""
 "interchangeable."
 msgstr ""
 
+#, python-format
 msgid ""
 "When used with the :meth:`strptime` method, the leading zero is optional "
 "for  formats ``%d``, ``%m``, ``%H``, ``%I``, ``%M``, ``%S``, ``%J``, ``%U``, "
@@ -2552,10 +2564,11 @@ msgstr ""
 
 msgid ""
 "See R. H. van Gent's `guide to the mathematics of the ISO 8601 calendar "
-"<https://www.staff.science.uu.nl/~gent0113/calendar/isocalendar.htm>`_ for a "
-"good explanation."
+"<https://web.archive.org/web/20220531051136/https://webspace.science.uu.nl/"
+"~gent0113/calendar/isocalendar.htm>`_ for a good explanation."
 msgstr ""
 
+#, python-format
 msgid ""
 "Passing ``datetime.strptime('Feb 29', '%b %d')`` will fail since ``1900`` is "
 "not a leap year."
