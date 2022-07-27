@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 08:14+0000\n"
+"POT-Creation-Date: 2022-07-27 06:15+0000\n"
 "PO-Revision-Date: 2021-06-28 01:13+0000\n"
 "Last-Translator: Igor Zubrycki <igorzubrycki@gmail.com>, 2021\n"
 "Language: pl\n"
@@ -31,6 +31,9 @@ msgstr ""
 msgid "**Source code:** :source:`Lib/sqlite3/`"
 msgstr ""
 
+msgid "Introduction"
+msgstr "Wprowadzenie"
+
 msgid ""
 "SQLite is a C library that provides a lightweight disk-based database that "
 "doesn't require a separate server process and allows accessing the database "
@@ -44,6 +47,9 @@ msgid ""
 "The sqlite3 module was written by Gerhard Häring.  It provides an SQL "
 "interface compliant with the DB-API 2.0 specification described by :pep:"
 "`249`, and requires SQLite 3.7.15 or newer."
+msgstr ""
+
+msgid "Tutorial"
 msgstr ""
 
 msgid ""
@@ -925,9 +931,6 @@ msgstr ""
 
 msgid "SQLite and Python types"
 msgstr ""
-
-msgid "Introduction"
-msgstr "Wprowadzenie"
 
 msgid ""
 "SQLite natively supports the following types: ``NULL``, ``INTEGER``, "
