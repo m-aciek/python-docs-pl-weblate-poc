@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-29 20:12+0000\n"
+"POT-Creation-Date: 2022-07-31 07:10+0000\n"
 "PO-Revision-Date: 2021-06-28 01:13+0000\n"
 "Last-Translator: Igor Zubrycki <igorzubrycki@gmail.com>, 2021\n"
 "Language: pl\n"
@@ -47,6 +47,25 @@ msgid ""
 "The sqlite3 module was written by Gerhard Häring.  It provides an SQL "
 "interface compliant with the DB-API 2.0 specification described by :pep:"
 "`249`, and requires SQLite 3.7.15 or newer."
+msgstr ""
+
+msgid "This document includes four main sections:"
+msgstr ""
+
+msgid ":ref:`sqlite3-tutorial` teaches how to use the sqlite3 module."
+msgstr ""
+
+msgid ""
+":ref:`sqlite3-reference` describes the classes and functions this module "
+"defines."
+msgstr ""
+
+msgid ":ref:`sqlite3-howtos` details how to handle specific tasks."
+msgstr ""
+
+msgid ""
+":ref:`sqlite3-explanation` provides in-depth background on transaction "
+"control."
 msgstr ""
 
 msgid "Tutorial"
@@ -126,6 +145,9 @@ msgid ":pep:`249` - Database API Specification 2.0"
 msgstr ""
 
 msgid "PEP written by Marc-André Lemburg."
+msgstr ""
+
+msgid "Reference"
 msgstr ""
 
 msgid "Module functions and constants"
@@ -332,7 +354,7 @@ msgid ""
 "on ``sys.stderr``. Use :const:`False` to disable the feature again."
 msgstr ""
 
-msgid "Connection Objects"
+msgid "Connection objects"
 msgstr ""
 
 msgid ""
@@ -692,7 +714,7 @@ msgstr ""
 msgid "Example 2, copy an existing database into a transient copy::"
 msgstr ""
 
-msgid "Cursor Objects"
+msgid "Cursor objects"
 msgstr ""
 
 msgid ""
@@ -836,7 +858,7 @@ msgid ""
 "that refers to *con*::"
 msgstr ""
 
-msgid "Row Objects"
+msgid "Row objects"
 msgstr ""
 
 msgid ""
@@ -865,7 +887,7 @@ msgstr ""
 msgid "Now we plug :class:`Row` in::"
 msgstr ""
 
-msgid "PrepareProtocol Objects"
+msgid "PrepareProtocol objects"
 msgstr ""
 
 msgid ""
@@ -1001,9 +1023,12 @@ msgstr ""
 
 msgid ""
 "The type system of the :mod:`sqlite3` module is extensible in two ways: you "
-"can store additional Python types in an SQLite database via object "
-"adaptation, and you can let the :mod:`sqlite3` module convert SQLite types "
-"to different Python types via converters."
+"can store additional Python types in an SQLite database via :ref:`object "
+"adapters <sqlite3-adapters>`, and you can let the ``sqlite3`` module convert "
+"SQLite types to Python types via :ref:`converters <sqlite3-converters>`."
+msgstr ""
+
+msgid "How-to guides"
 msgstr ""
 
 msgid "Using adapters to store custom Python types in SQLite databases"
@@ -1125,75 +1150,10 @@ msgid ""
 "offset-aware converter with :func:`register_converter`."
 msgstr ""
 
-msgid "Adapter and Converter Recipes"
+msgid "Adapter and converter recipes"
 msgstr ""
 
 msgid "This section shows recipes for common adapters and converters."
-msgstr ""
-
-msgid "Controlling Transactions"
-msgstr ""
-
-msgid ""
-"The ``sqlite3`` module does not adhere to the transaction handling "
-"recommended by :pep:`249`."
-msgstr ""
-
-msgid ""
-"If the connection attribute :attr:`~Connection.isolation_level` is not :"
-"const:`None`, new transactions are implicitly opened before :meth:`~Cursor."
-"execute` and :meth:`~Cursor.executemany` executes ``INSERT``, ``UPDATE``, "
-"``DELETE``, or ``REPLACE`` statements. Use the :meth:`~Connection.commit` "
-"and :meth:`~Connection.rollback` methods to respectively commit and roll "
-"back pending transactions. You can choose the underlying `SQLite transaction "
-"behaviour`_ — that is, whether and what type of ``BEGIN`` statements "
-"``sqlite3`` implicitly executes – via the :attr:`~Connection."
-"isolation_level` attribute."
-msgstr ""
-
-msgid ""
-"If :attr:`~Connection.isolation_level` is set to :const:`None`, no "
-"transactions are implicitly opened at all. This leaves the underlying SQLite "
-"library in `autocommit mode`_, but also allows the user to perform their own "
-"transaction handling using explicit SQL statements. The underlying SQLite "
-"library autocommit mode can be queried using the :attr:`~Connection."
-"in_transaction` attribute."
-msgstr ""
-
-msgid ""
-"The :meth:`~Cursor.executescript` method implicitly commits any pending "
-"transaction before execution of the given SQL script, regardless of the "
-"value of :attr:`~Connection.isolation_level`."
-msgstr ""
-
-msgid ""
-":mod:`sqlite3` used to implicitly commit an open transaction before DDL "
-"statements.  This is no longer the case."
-msgstr ""
-
-msgid "SQLite URI tricks"
-msgstr ""
-
-msgid "Some useful URI tricks include:"
-msgstr ""
-
-msgid "Open a database in read-only mode::"
-msgstr ""
-
-msgid ""
-"Do not implicitly create a new database file if it does not already exist; "
-"will raise :exc:`~sqlite3.OperationalError` if unable to create a new file::"
-msgstr ""
-
-msgid "Create a shared named in-memory database::"
-msgstr ""
-
-msgid ""
-"More information about this feature, including a list of parameters, can be "
-"found in the `SQLite URI documentation`_."
-msgstr ""
-
-msgid "Using :mod:`sqlite3` efficiently"
 msgstr ""
 
 msgid "Using connection shortcut methods"
@@ -1243,6 +1203,71 @@ msgstr ""
 msgid ""
 "The context manager neither implicitly opens a new transaction nor closes "
 "the connection."
+msgstr ""
+
+msgid "Working with SQLite URIs"
+msgstr ""
+
+msgid "Some useful URI tricks include:"
+msgstr ""
+
+msgid "Open a database in read-only mode::"
+msgstr ""
+
+msgid ""
+"Do not implicitly create a new database file if it does not already exist; "
+"will raise :exc:`~sqlite3.OperationalError` if unable to create a new file::"
+msgstr ""
+
+msgid "Create a shared named in-memory database::"
+msgstr ""
+
+msgid ""
+"More information about this feature, including a list of parameters, can be "
+"found in the `SQLite URI documentation`_."
+msgstr ""
+
+msgid "Explanation"
+msgstr ""
+
+msgid "Transaction control"
+msgstr ""
+
+msgid ""
+"The ``sqlite3`` module does not adhere to the transaction handling "
+"recommended by :pep:`249`."
+msgstr ""
+
+msgid ""
+"If the connection attribute :attr:`~Connection.isolation_level` is not :"
+"const:`None`, new transactions are implicitly opened before :meth:`~Cursor."
+"execute` and :meth:`~Cursor.executemany` executes ``INSERT``, ``UPDATE``, "
+"``DELETE``, or ``REPLACE`` statements. Use the :meth:`~Connection.commit` "
+"and :meth:`~Connection.rollback` methods to respectively commit and roll "
+"back pending transactions. You can choose the underlying `SQLite transaction "
+"behaviour`_ — that is, whether and what type of ``BEGIN`` statements "
+"``sqlite3`` implicitly executes – via the :attr:`~Connection."
+"isolation_level` attribute."
+msgstr ""
+
+msgid ""
+"If :attr:`~Connection.isolation_level` is set to :const:`None`, no "
+"transactions are implicitly opened at all. This leaves the underlying SQLite "
+"library in `autocommit mode`_, but also allows the user to perform their own "
+"transaction handling using explicit SQL statements. The underlying SQLite "
+"library autocommit mode can be queried using the :attr:`~Connection."
+"in_transaction` attribute."
+msgstr ""
+
+msgid ""
+"The :meth:`~Cursor.executescript` method implicitly commits any pending "
+"transaction before execution of the given SQL script, regardless of the "
+"value of :attr:`~Connection.isolation_level`."
+msgstr ""
+
+msgid ""
+":mod:`sqlite3` used to implicitly commit an open transaction before DDL "
+"statements.  This is no longer the case."
 msgstr ""
 
 #~ msgid "Footnotes"
