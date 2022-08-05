@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-05 06:46+0000\n"
+"POT-Creation-Date: 2022-08-05 16:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -95,19 +95,19 @@ msgstr ""
 msgid "Open an existing file with an Open dialog."
 msgstr ""
 
-msgid "Recent Files"
-msgstr ""
-
-msgid "Open a list of recent files.  Click one to open it."
-msgstr ""
-
 msgid "Open Module..."
 msgstr ""
 
 msgid "Open an existing module (searches sys.path)."
 msgstr ""
 
-msgid "Class Browser"
+msgid "Recent Files"
+msgstr ""
+
+msgid "Open a list of recent files.  Click one to open it."
+msgstr ""
+
+msgid "Module Browser"
 msgstr ""
 
 msgid ""
@@ -140,7 +140,7 @@ msgid ""
 "Save the current window with a Save As dialog.  The file saved becomes the "
 "new associated file for the window. (If your file namager is set to hide "
 "extensions, the current extension will be omitted in the file name box. If "
-"the new filename has no '.', '.py' and .'txt' will be added for Python and "
+"the new filename has no '.', '.py' and '.txt' will be added for Python and "
 "text files, except that on macOS Aqua,'.py' is added for all files.)"
 msgstr ""
 
@@ -190,6 +190,12 @@ msgstr ""
 msgid "Redo the last undone change to the current window."
 msgstr ""
 
+msgid "Select All"
+msgstr ""
+
+msgid "Select the entire contents of the current window."
+msgstr ""
+
 msgid "Cut"
 msgstr ""
 
@@ -210,12 +216,6 @@ msgid "Insert contents of the system-wide clipboard into the current window."
 msgstr ""
 
 msgid "The clipboard functions are also available in context menus."
-msgstr ""
-
-msgid "Select All"
-msgstr ""
-
-msgid "Select the entire contents of the current window."
 msgstr ""
 
 msgid "Find..."
@@ -273,7 +273,7 @@ msgid ""
 "repeat to get a different expansion."
 msgstr ""
 
-msgid "Show call tip"
+msgid "Show Call Tip"
 msgstr ""
 
 msgid ""
@@ -282,13 +282,22 @@ msgid ""
 "navigation section below."
 msgstr ""
 
-msgid "Show surrounding parens"
+msgid "Show Surrounding Parens"
 msgstr ""
 
 msgid "Highlight the surrounding parenthesis."
 msgstr ""
 
 msgid "Format menu (Editor window only)"
+msgstr ""
+
+msgid "Format Paragraph"
+msgstr ""
+
+msgid ""
+"Reformat the current blank-line-delimited paragraph in comment block or "
+"multiline string or selected line in a string.  All lines in the paragraph "
+"will be formatted to less than N columns, where N defaults to 72."
 msgstr ""
 
 msgid "Indent Region"
@@ -343,16 +352,7 @@ msgid ""
 "community is 4 spaces."
 msgstr ""
 
-msgid "Format Paragraph"
-msgstr ""
-
-msgid ""
-"Reformat the current blank-line-delimited paragraph in comment block or "
-"multiline string or selected line in a string.  All lines in the paragraph "
-"will be formatted to less than N columns, where N defaults to 72."
-msgstr ""
-
-msgid "Strip trailing whitespace"
+msgid "Strip Trailing Chitespace"
 msgstr ""
 
 msgid ""
@@ -723,6 +723,16 @@ msgstr ""
 msgid ""
 "See also the indent/dedent region commands on the :ref:`Format menu <format-"
 "menu>`."
+msgstr ""
+
+msgid "Search and Replace"
+msgstr ""
+
+msgid ""
+"Any selection becomes a search target.  However, only selections within a "
+"line work because searches are only performed within lines with the terminal "
+"newline removed.  If ``[x] Regular expresion`` is checked, the target is "
+"interpreted according to the Python re module."
 msgstr ""
 
 msgid "Completions"
