@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-19 08:45+0000\n"
+"POT-Creation-Date: 2022-08-22 08:15+0000\n"
 "PO-Revision-Date: 2021-06-28 01:13+0000\n"
 "Last-Translator: Igor Zubrycki <igorzubrycki@gmail.com>, 2021\n"
 "Language: pl\n"
@@ -204,9 +204,6 @@ msgid ":ref:`sqlite3-adapters`"
 msgstr ""
 
 msgid ":ref:`sqlite3-converters`"
-msgstr ""
-
-msgid ":ref:`sqlite3-columns-by-name`"
 msgstr ""
 
 msgid ":ref:`sqlite3-connection-context-manager`"
@@ -933,9 +930,8 @@ msgid "Row objects"
 msgstr ""
 
 msgid ""
-"A :class:`Row` instance serves as a highly optimized :attr:`~Connection."
-"row_factory` for :class:`Connection` objects. It tries to mimic a :class:"
-"`tuple` in most of its features, and supports iteration, :func:`repr`, "
+"A :class:`!Row` instance serves as a highly optimized :attr:`~Connection."
+"row_factory` for :class:`Connection` objects. It supports iteration, "
 "equality testing, :func:`len`, and :term:`mapping` access by column name and "
 "index."
 msgstr ""
@@ -950,12 +946,6 @@ msgid ""
 msgstr ""
 
 msgid "Added support of slicing."
-msgstr ""
-
-msgid "Let's assume we initialize a table as in the example given above::"
-msgstr ""
-
-msgid "Now we plug :class:`Row` in::"
 msgstr ""
 
 msgid "PrepareProtocol objects"
@@ -1265,19 +1255,6 @@ msgid ""
 "the cursor objects. This way, you can execute a ``SELECT`` statement and "
 "iterate over it directly using only a single call on the :class:`Connection` "
 "object."
-msgstr ""
-
-msgid "Accessing columns by name instead of by index"
-msgstr ""
-
-msgid ""
-"One useful feature of the :mod:`!sqlite3` module is the built-in :class:"
-"`sqlite3.Row` class designed to be used as a row factory."
-msgstr ""
-
-msgid ""
-"Rows wrapped with this class can be accessed both by index (like tuples) and "
-"case-insensitively by name:"
 msgstr ""
 
 msgid "Using the connection as a context manager"
