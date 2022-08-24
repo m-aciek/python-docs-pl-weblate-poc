@@ -1,28 +1,28 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2001-2022, Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 # Translators:
 # Igor Zubrycki <igorzubrycki@gmail.com>, 2021
 # Maciej Olko <maciej.olko@gmail.com>, 2021
-#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-16 06:28+0000\n"
+"POT-Creation-Date: 2022-08-24 14:38+0000\n"
 "PO-Revision-Date: 2021-06-28 01:06+0000\n"
 "Last-Translator: Maciej Olko <maciej.olko@gmail.com>, 2021\n"
-"Language-Team: Polish (https://www.transifex.com/python-doc/teams/5390/pl/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
+"Language-Team: Polish (https://www.transifex.com/python-doc/teams/5390/pl/)\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
 
 msgid "Built-in Functions"
 msgstr "Funkcje wbudowane"
@@ -403,7 +403,8 @@ msgid ""
 "so you don't have to explicitly import :mod:`pdb` or type as much code to "
 "enter the debugger.  However, :func:`sys.breakpointhook` can be set to some "
 "other function and :func:`breakpoint` will automatically call that, allowing "
-"you to drop into the debugger of choice."
+"you to drop into the debugger of choice. If :func:`sys.breakpointhook` is "
+"not available to be called, this function will raise :exc:`RuntimeError`."
 msgstr ""
 
 msgid ""
