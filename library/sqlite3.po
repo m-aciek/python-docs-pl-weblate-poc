@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-23 07:16+0000\n"
+"POT-Creation-Date: 2022-08-24 08:15+0000\n"
 "PO-Revision-Date: 2021-06-28 01:13+0000\n"
 "Last-Translator: Igor Zubrycki <igorzubrycki@gmail.com>, 2021\n"
 "Language: pl\n"
@@ -1105,6 +1105,42 @@ msgid ""
 "converters>`."
 msgstr ""
 
+msgid "Default adapters and converters"
+msgstr ""
+
+msgid ""
+"There are default adapters for the date and datetime types in the datetime "
+"module. They will be sent as ISO dates/ISO timestamps to SQLite."
+msgstr ""
+
+msgid ""
+"The default converters are registered under the name \"date\" for :class:"
+"`datetime.date` and under the name \"timestamp\" for :class:`datetime."
+"datetime`."
+msgstr ""
+
+msgid ""
+"This way, you can use date/timestamps from Python without any additional "
+"fiddling in most cases. The format of the adapters is also compatible with "
+"the experimental SQLite date/time functions."
+msgstr ""
+
+msgid "The following example demonstrates this."
+msgstr ""
+
+msgid ""
+"If a timestamp stored in SQLite has a fractional part longer than 6 numbers, "
+"its value will be truncated to microsecond precision by the timestamp "
+"converter."
+msgstr ""
+
+msgid ""
+"The default \"timestamp\" converter ignores UTC offsets in the database and "
+"always returns a naive :class:`datetime.datetime` object. To preserve UTC "
+"offsets in timestamps, either leave converters disabled, or register an "
+"offset-aware converter with :func:`register_converter`."
+msgstr ""
+
 msgid "How-to guides"
 msgstr ""
 
@@ -1133,7 +1169,7 @@ msgid ""
 "ignored. Here's an example of both styles:"
 msgstr ""
 
-msgid "Using adapters to store custom Python types in SQLite databases"
+msgid "How to adapt custom Python types to SQLite values"
 msgstr ""
 
 msgid ""
@@ -1151,7 +1187,7 @@ msgid ""
 "custom adapter functions."
 msgstr ""
 
-msgid "Letting your object adapt itself"
+msgid "How to write adaptable objects"
 msgstr ""
 
 msgid ""
@@ -1163,7 +1199,7 @@ msgid ""
 "object passed to *protocol* will be of type :class:`PrepareProtocol`."
 msgstr ""
 
-msgid "Registering an adapter callable"
+msgid "How to register adapter callables"
 msgstr ""
 
 msgid ""
@@ -1172,7 +1208,7 @@ msgid ""
 "using :func:`register_adapter`."
 msgstr ""
 
-msgid "Converting SQLite values to custom Python types"
+msgid "How to convert SQLite values to custom Python types"
 msgstr ""
 
 msgid ""
@@ -1216,49 +1252,13 @@ msgstr ""
 msgid "The following example illustrates the implicit and explicit approaches:"
 msgstr ""
 
-msgid "Default adapters and converters"
-msgstr ""
-
-msgid ""
-"There are default adapters for the date and datetime types in the datetime "
-"module. They will be sent as ISO dates/ISO timestamps to SQLite."
-msgstr ""
-
-msgid ""
-"The default converters are registered under the name \"date\" for :class:"
-"`datetime.date` and under the name \"timestamp\" for :class:`datetime."
-"datetime`."
-msgstr ""
-
-msgid ""
-"This way, you can use date/timestamps from Python without any additional "
-"fiddling in most cases. The format of the adapters is also compatible with "
-"the experimental SQLite date/time functions."
-msgstr ""
-
-msgid "The following example demonstrates this."
-msgstr ""
-
-msgid ""
-"If a timestamp stored in SQLite has a fractional part longer than 6 numbers, "
-"its value will be truncated to microsecond precision by the timestamp "
-"converter."
-msgstr ""
-
-msgid ""
-"The default \"timestamp\" converter ignores UTC offsets in the database and "
-"always returns a naive :class:`datetime.datetime` object. To preserve UTC "
-"offsets in timestamps, either leave converters disabled, or register an "
-"offset-aware converter with :func:`register_converter`."
-msgstr ""
-
 msgid "Adapter and converter recipes"
 msgstr ""
 
 msgid "This section shows recipes for common adapters and converters."
 msgstr ""
 
-msgid "Using connection shortcut methods"
+msgid "How to use connection shortcut methods"
 msgstr ""
 
 msgid ""
@@ -1272,7 +1272,7 @@ msgid ""
 "object."
 msgstr ""
 
-msgid "Using the connection as a context manager"
+msgid "How to use the connection context manager"
 msgstr ""
 
 msgid ""
@@ -1294,7 +1294,7 @@ msgid ""
 "the connection."
 msgstr ""
 
-msgid "Working with SQLite URIs"
+msgid "How to work with SQLite URIs"
 msgstr ""
 
 msgid "Some useful URI tricks include:"
