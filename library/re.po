@@ -1,29 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2001-2022, Python Software Foundation
 # This file is distributed under the same license as the Python package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
 # Translators:
 # Krzysztof Abramowicz, 2022
 # Maciej Olko <maciej.olko@gmail.com>, 2022
 # Igor Zubrycki <igorzubrycki@gmail.com>, 2022
-#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-16 06:28+0000\n"
+"POT-Creation-Date: 2022-10-05 03:19+0000\n"
 "PO-Revision-Date: 2021-06-28 01:12+0000\n"
 "Last-Translator: Igor Zubrycki <igorzubrycki@gmail.com>, 2022\n"
-"Language-Team: Polish (https://www.transifex.com/python-doc/teams/5390/pl/)\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
+"Language-Team: Polish (https://www.transifex.com/python-doc/teams/5390/pl/)\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
 
 msgid ":mod:`re` --- Regular expression operations"
 msgstr ""
@@ -817,10 +817,11 @@ msgid ""
 "more readable by allowing you to visually separate logical sections of the "
 "pattern and add comments. Whitespace within the pattern is ignored, except "
 "when in a character class, or when preceded by an unescaped backslash, or "
-"within tokens like ``*?``, ``(?:`` or ``(?P<...>``. When a line contains a "
-"``#`` that is not in a character class and is not preceded by an unescaped "
-"backslash, all characters from the leftmost such ``#`` through the end of "
-"the line are ignored."
+"within tokens like ``*?``, ``(?:`` or ``(?P<...>``. For example, ``(? :`` "
+"and ``* ?`` are not allowed. When a line contains a ``#`` that is not in a "
+"character class and is not preceded by an unescaped backslash, all "
+"characters from the leftmost such ``#`` through the end of the line are "
+"ignored."
 msgstr ""
 
 msgid ""
@@ -1359,51 +1360,60 @@ msgstr ""
 msgid "Regular Expression"
 msgstr ""
 
+#, python-format
 msgid "``%c``"
 msgstr ""
 
+#, python-format
 msgid "``%5c``"
 msgstr ""
 
 msgid "``.{5}``"
 msgstr ""
 
+#, python-format
 msgid "``%d``"
 msgstr ""
 
 msgid "``[-+]?\\d+``"
 msgstr ""
 
+#, python-format
 msgid "``%e``, ``%E``, ``%f``, ``%g``"
 msgstr ""
 
 msgid "``[-+]?(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?``"
 msgstr ""
 
+#, python-format
 msgid "``%i``"
 msgstr ""
 
 msgid "``[-+]?(0[xX][\\dA-Fa-f]+|0[0-7]*|\\d+)``"
 msgstr ""
 
+#, python-format
 msgid "``%o``"
 msgstr ""
 
 msgid "``[-+]?[0-7]+``"
 msgstr ""
 
+#, python-format
 msgid "``%s``"
 msgstr ""
 
 msgid "``\\S+``"
 msgstr ""
 
+#, python-format
 msgid "``%u``"
 msgstr ""
 
 msgid "``\\d+``"
 msgstr ""
 
+#, python-format
 msgid "``%x``, ``%X``"
 msgstr ""
 
