@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-20 12:29+0000\n"
+"POT-Creation-Date: 2022-11-01 23:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Generated-By: Babel 2.11.0\n"
 
 msgid "Logging Cookbook"
 msgstr ""
@@ -312,11 +312,118 @@ msgstr ""
 
 msgid ""
 "To run a logging listener in production, you may need to use a process-"
-"management tool such as `Supervisor <http://supervisord.org/>`_. `Here "
-"<https://gist.github.com/vsajip/4b227eeec43817465ca835ca66f75e2b>`_ is a "
-"Gist which provides the bare-bones files to run the above functionality "
-"using Supervisor: you will need to change the ``/path/to/`` parts in the "
-"Gist to reflect the actual paths you want to use."
+"management tool such as `Supervisor <http://supervisord.org/>`_. `Here is a "
+"Gist <socket-listener-gist_>`__ which provides the bare-bones files to run "
+"the above functionality using Supervisor. It consists of the following files:"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Purpose"
+msgstr ""
+
+msgid ":file:`prepare.sh`"
+msgstr ""
+
+msgid "A Bash script to prepare the environment for testing"
+msgstr ""
+
+msgid ":file:`supervisor.conf`"
+msgstr ""
+
+msgid ""
+"The Supervisor configuration file, which has entries for the listener and a "
+"multi-process web application"
+msgstr ""
+
+msgid ":file:`ensure_app.sh`"
+msgstr ""
+
+msgid ""
+"A Bash script to ensure that Supervisor is running with the above "
+"configuration"
+msgstr ""
+
+msgid ":file:`log_listener.py`"
+msgstr ""
+
+msgid ""
+"The socket listener program which receives log events and records them to a "
+"file"
+msgstr ""
+
+msgid ":file:`main.py`"
+msgstr ""
+
+msgid ""
+"A simple web application which performs logging via a socket connected to "
+"the listener"
+msgstr ""
+
+msgid ":file:`webapp.json`"
+msgstr ""
+
+msgid "A JSON configuration file for the web application"
+msgstr ""
+
+msgid ":file:`client.py`"
+msgstr ""
+
+msgid "A Python script to exercise the web application"
+msgstr ""
+
+msgid ""
+"The web application uses `Gunicorn <https://gunicorn.org/>`_, which is a "
+"popular web application server that starts multiple worker processes to "
+"handle requests. This example setup shows how the workers can write to the "
+"same log file without conflicting with one another --- they all go through "
+"the socket listener."
+msgstr ""
+
+msgid "To test these files, do the following in a POSIX environment:"
+msgstr ""
+
+msgid ""
+"Download `the Gist <socket-listener-gist_>`__ as a ZIP archive using the :"
+"guilabel:`Download ZIP` button."
+msgstr ""
+
+msgid "Unzip the above files from the archive into a scratch directory."
+msgstr ""
+
+msgid ""
+"In the scratch directory, run ``bash prepare.sh`` to get things ready. This "
+"creates a :file:`run` subdirectory to contain Supervisor-related and log "
+"files, and a :file:`venv` subdirectory to contain a virtual environment into "
+"which ``bottle``, ``gunicorn`` and ``supervisor`` are installed."
+msgstr ""
+
+msgid ""
+"Run ``bash ensure_app.sh`` to ensure that Supervisor is running with the "
+"above configuration."
+msgstr ""
+
+msgid ""
+"Run ``venv/bin/python client.py`` to exercise the web application, which "
+"will lead to records being written to the log."
+msgstr ""
+
+msgid ""
+"Inspect the log files in the :file:`run` subdirectory. You should see the "
+"most recent log lines in files matching the pattern :file:`app.log*`. They "
+"won't be in any particular order, since they have been handled concurrently "
+"by different worker processes in a non-deterministic way."
+msgstr ""
+
+msgid ""
+"You can shut down the listener and the web application by running ``venv/bin/"
+"supervisorctl -c supervisor.conf shutdown``."
+msgstr ""
+
+msgid ""
+"You may need to tweak the configuration files in the unlikely event that the "
+"configured ports clash with something else in your test environment."
 msgstr ""
 
 msgid "Adding contextual information to your logging output"
