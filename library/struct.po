@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-05 21:12+0000\n"
+"POT-Creation-Date: 2022-11-03 03:14+0000\n"
 "PO-Revision-Date: 2021-06-28 01:14+0000\n"
 "Last-Translator: Tomasz Rodzen <t.rodzen@poczta.fm>, 2021\n"
 "Language: pl\n"
@@ -22,7 +22,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Generated-By: Babel 2.11.0\n"
 
 msgid ":mod:`struct` --- Interpret bytes as packed binary data"
 msgstr ""
@@ -275,6 +275,10 @@ msgstr ""
 msgid "no value"
 msgstr ""
 
+#, fuzzy
+msgid "\\(7)"
+msgstr "\\(5)"
+
 msgid "``c``"
 msgstr ""
 
@@ -489,6 +493,9 @@ msgid ""
 "typical machine, an unsigned short can be used for storage, but not for math "
 "operations. See the Wikipedia page on the `half-precision floating-point "
 "format <half precision format_>`_ for more information."
+msgstr ""
+
+msgid "For padding, ``x`` inserts null bytes."
 msgstr ""
 
 msgid ""
