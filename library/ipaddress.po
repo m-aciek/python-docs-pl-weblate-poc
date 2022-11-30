@@ -551,8 +551,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"It uses the same ordering and comparison algorithm as \"<\", \"==\", and \">"
-"\""
+"It uses the same ordering and comparison algorithm as \"<\", \"==\", and "
+"\">\""
 msgstr ""
 
 msgid ""

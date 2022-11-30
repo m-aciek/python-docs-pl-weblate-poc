@@ -192,8 +192,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"This method will parse and dispatch the request to the appropriate :meth:`do_"
-"\\*` method.  You should never need to override it."
+"This method will parse and dispatch the request to the appropriate :meth:"
+"`do_\\*` method.  You should never need to override it."
 msgstr ""
 
 msgid ""

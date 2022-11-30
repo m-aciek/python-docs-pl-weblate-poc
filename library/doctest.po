@@ -819,8 +819,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Optional argument *name* is used in failure messages, and defaults to ``"
-"\"NoName\"``."
+"Optional argument *name* is used in failure messages, and defaults to "
+"``\"NoName\"``."
 msgstr ""
 
 msgid ""

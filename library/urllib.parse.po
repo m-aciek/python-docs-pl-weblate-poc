@@ -322,8 +322,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Following the `WHATWG spec`_ that updates RFC 3986, ASCII newline ``\\n``, ``"
-"\\r`` and tab ``\\t`` characters are stripped from the URL."
+"Following the `WHATWG spec`_ that updates RFC 3986, ASCII newline ``\\n``, "
+"``\\r`` and tab ``\\t`` characters are stripped from the URL."
 msgstr ""
 
 msgid "ASCII newline and tab characters are stripped from the URL."
