@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-19 21:05+0000\n"
+"POT-Creation-Date: 2023-01-03 22:34+0000\n"
 "PO-Revision-Date: 2021-06-29 13:04+0000\n"
 "Last-Translator: Maciej Olko <maciej.olko@gmail.com>, 2022\n"
 "Language: pl\n"
@@ -23,22 +23,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Generated-By: Babel 2.11.0\n"
 
 msgid "What's New In Python 3.9"
 msgstr "Co nowego w Pythonie 3.9"
-
-msgid "Release"
-msgstr "wydanie"
-
-msgid "|release|"
-msgstr "|release|"
-
-msgid "Date"
-msgstr "data"
-
-msgid "|today|"
-msgstr "|today|"
 
 msgid "Editor"
 msgstr "redakcja"
@@ -1993,3 +1981,15 @@ msgid ""
 "For more details, please see their respective documentation. (Contributed by "
 "Adam Goldschmidt, Senthil Kumaran and Ken Jin in :issue:`42967`.)"
 msgstr ""
+
+#~ msgid "Release"
+#~ msgstr "wydanie"
+
+#~ msgid "|release|"
+#~ msgstr "|release|"
+
+#~ msgid "Date"
+#~ msgstr "data"
+
+#~ msgid "|today|"
+#~ msgstr "|today|"
