@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.10\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-12 00:53+0000\n"
+"POT-Creation-Date: 2023-03-02 06:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.11.0\n"
+"Generated-By: Babel 2.12.1\n"
 
 msgid ":mod:`sys` --- System-specific parameters and functions"
 msgstr ""
@@ -621,10 +621,10 @@ msgstr ""
 msgid "explanation"
 msgstr ""
 
-msgid ":const:`epsilon`"
+msgid "``epsilon``"
 msgstr ""
 
-msgid "DBL_EPSILON"
+msgid "``DBL_EPSILON``"
 msgstr ""
 
 msgid ""
@@ -635,10 +635,10 @@ msgstr ""
 msgid "See also :func:`math.ulp`."
 msgstr ""
 
-msgid ":const:`dig`"
+msgid "``dig``"
 msgstr ""
 
-msgid "DBL_DIG"
+msgid "``DBL_DIG``"
 msgstr ""
 
 msgid ""
@@ -646,10 +646,10 @@ msgid ""
 "float;  see below"
 msgstr ""
 
-msgid ":const:`mant_dig`"
+msgid "``mant_dig``"
 msgstr ""
 
-msgid "DBL_MANT_DIG"
+msgid "``DBL_MANT_DIG``"
 msgstr ""
 
 msgid ""
@@ -657,19 +657,19 @@ msgid ""
 "float"
 msgstr ""
 
-msgid ":const:`max`"
+msgid "``max``"
 msgstr ""
 
-msgid "DBL_MAX"
+msgid "``DBL_MAX``"
 msgstr ""
 
 msgid "maximum representable positive finite float"
 msgstr ""
 
-msgid ":const:`max_exp`"
+msgid "``max_exp``"
 msgstr ""
 
-msgid "DBL_MAX_EXP"
+msgid "``DBL_MAX_EXP``"
 msgstr ""
 
 msgid ""
@@ -677,10 +677,10 @@ msgid ""
 "float"
 msgstr ""
 
-msgid ":const:`max_10_exp`"
+msgid "``max_10_exp``"
 msgstr ""
 
-msgid "DBL_MAX_10_EXP"
+msgid "``DBL_MAX_10_EXP``"
 msgstr ""
 
 msgid ""
@@ -688,10 +688,10 @@ msgid ""
 "finite floats"
 msgstr ""
 
-msgid ":const:`min`"
+msgid "``min``"
 msgstr ""
 
-msgid "DBL_MIN"
+msgid "``DBL_MIN``"
 msgstr ""
 
 msgid "minimum representable positive *normalized* float"
@@ -702,44 +702,49 @@ msgid ""
 "*denormalized* representable float."
 msgstr ""
 
-msgid ":const:`min_exp`"
+msgid "``min_exp``"
 msgstr ""
 
-msgid "DBL_MIN_EXP"
+msgid "``DBL_MIN_EXP``"
 msgstr ""
 
 msgid "minimum integer *e* such that ``radix**(e-1)`` is a normalized float"
 msgstr ""
 
-msgid ":const:`min_10_exp`"
+msgid "``min_10_exp``"
 msgstr ""
 
-msgid "DBL_MIN_10_EXP"
+msgid "``DBL_MIN_10_EXP``"
 msgstr ""
 
 msgid "minimum integer *e* such that ``10**e`` is a normalized float"
 msgstr ""
 
-msgid ":const:`radix`"
+msgid "``radix``"
 msgstr ""
 
-msgid "FLT_RADIX"
+msgid "``FLT_RADIX``"
 msgstr ""
 
 msgid "radix of exponent representation"
 msgstr ""
 
-msgid ":const:`rounds`"
+msgid "``rounds``"
 msgstr ""
 
-msgid "FLT_ROUNDS"
+msgid "``FLT_ROUNDS``"
 msgstr ""
 
 msgid ""
-"integer constant representing the rounding mode used for arithmetic "
-"operations.  This reflects the value of the system FLT_ROUNDS macro at "
-"interpreter startup time.  See section 5.2.4.2.2 of the C99 standard for an "
-"explanation of the possible values and their meanings."
+"integer representing the rounding mode for floating-point arithmetic. This "
+"reflects the value of the system ``FLT_ROUNDS`` macro at interpreter startup "
+"time: ``-1`` indeterminable, ``0`` toward zero, ``1`` to nearest, ``2`` "
+"toward positive infinity, ``3`` toward negative infinity"
+msgstr ""
+
+msgid ""
+"All other values for ``FLT_ROUNDS`` characterize implementation-defined "
+"rounding behavior."
 msgstr ""
 
 msgid ""
