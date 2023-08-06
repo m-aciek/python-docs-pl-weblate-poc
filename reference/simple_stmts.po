@@ -6,16 +6,15 @@
 # Translators:
 # Krzysztof Abramowicz, 2023
 # Maciej Olko <maciej.olko@gmail.com>, 2023
-# Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2023
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.12\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 14:13+0000\n"
+"POT-Creation-Date: 2023-05-29 16:50+0000\n"
 "PO-Revision-Date: 2021-06-28 01:49+0000\n"
-"Last-Translator: Tadeusz Karpiński <tadeuszkarpinski@gmail.com>, 2023\n"
+"Last-Translator: Maciej Olko <maciej.olko@gmail.com>, 2023\n"
 "Language-Team: Polish (https://app.transifex.com/python-doc/teams/5390/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -185,7 +184,7 @@ msgstr ""
 msgid ""
 "If the primary is a mapping object (such as a dictionary), the subscript "
 "must have a type compatible with the mapping's key type, and the mapping is "
-"then asked to create a key/value pair which maps the subscript to the "
+"then asked to create a key/datum pair which maps the subscript to the "
 "assigned object.  This can either replace an existing key/value pair with "
 "the same key value, or insert a new key/value pair (if no key with the same "
 "value existed)."
@@ -1057,7 +1056,7 @@ msgid "mapping"
 msgstr ""
 
 msgid "dictionary"
-msgstr "słownik"
+msgstr ""
 
 msgid "slicing"
 msgstr ""
