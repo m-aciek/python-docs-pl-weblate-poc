@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [3.12, 3.11, '3.10', 3.9, 3.8]
+        version: [3.12]
     steps:
       - uses: styfle/cancel-workflow-action@main
         with:
@@ -19,30 +19,19 @@ jobs:
         with:
           python-version: 3
       - run: sudo apt-get install -y gettext
-      - run: pip install requests cogapp polib transifex-python sphinx-intl blurb
-      - run: curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
-        working-directory: /usr/local/bin
+      - run: pip install requests cogapp polib blurb wlc
       - uses: actions/checkout@master
         with:
           ref: ${{ matrix.version }}
-      - run: ./manage_translation.py recreate_tx_config
-        env:
-          TX_TOKEN: ${{ secrets.TX_TOKEN }}
-      - run: ./manage_translation.py fetch
-        env:
-          TX_TOKEN: ${{ secrets.TX_TOKEN }}
       - run: python -Werror -m cogapp -rP README.md
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
       - run: git config --local user.email github-actions@github.com
-      - run: git config --local user.name "GitHub Action's update-translation job"
-      - run: >
-          ! git diff -I'^"POT-Creation-Date: ' -I'^"Language-Team: ' --exit-code && echo "SIGNIFICANT_CHANGES=1" >> $GITHUB_ENV || exit 0
-      - run: git add .
-      - run: git commit -m 'Update translation from Transifex' || true
-        if: env.SIGNIFICANT_CHANGES
+      - run: git config --local user.name github-actions[bot]
+      - run: python .update-translation.py ${{ matrix.version }}
+        env:
+          KEY: ${{ secrets.WEBLATE_KEY }}
       - uses: ad-m/github-push-action@master
-        if: env.SIGNIFICANT_CHANGES
         with:
           branch: ${{ matrix.version }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
