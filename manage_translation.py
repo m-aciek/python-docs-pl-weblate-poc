@@ -2,16 +2,18 @@
 Utility scripts for Python docs Polish translation.
 It has to be run inside the python-docs-pl git root directory.
 """
-import os
 from dataclasses import dataclass
 from difflib import SequenceMatcher
 from itertools import combinations
+from logging import warning, basicConfig
+from os import getenv
 from pathlib import Path
-from typing import Self, Generator, Iterable
+from typing import Generator, Iterable, Self
 from warnings import warn
 
 from polib import pofile
-from transifex.api import transifex_api
+from tqdm import tqdm
+from wlc import Component, LanguageStats, Project, Statistics, TranslationStatistics, Weblate, WeblateException
 
 LANGUAGE = 'pl'
 PROJECT_SLUG = 'python-newest'
@@ -24,38 +26,57 @@ class ResourceLanguageStatistics:
     translated_words: int
     total_strings: int
     translated_strings: int
+    exists: bool
 
     @classmethod
-    def from_api_entry(cls, data: transifex_api.ResourceLanguageStats) -> Self:
+    def from_wlc(cls, component_name: str, stats: TranslationStatistics) -> Self:
         return cls(
-            name=data.id.removeprefix(f'o:python-doc:p:{PROJECT_SLUG}:r:').removesuffix(f':l:{LANGUAGE}'),
-            total_words=data.attributes['total_words'],
-            translated_words=data.attributes['translated_words'],
-            total_strings=data.attributes['total_strings'],
-            translated_strings=data.attributes['translated_strings'],
+            name=component_name,
+            total_words=stats.total_words,
+            translated_words=stats.translated_words,
+            total_strings=stats.total,
+            translated_strings=stats.translated,
+            exists=True,
+        )
+
+    @classmethod
+    def empty_from_any_wlc(cls, component_name: str, stats: TranslationStatistics) -> Self:
+        return cls(
+            name=component_name,
+            total_words=stats.total_words,
+            translated_words=0,
+            total_strings=stats.total,
+            translated_strings=0,
+            exists=False,
         )
 
 
-def _get_tx_token() -> str:
-    if os.path.exists('.tx/api-key'):
-        with open('.tx/api-key') as f:
-            transifex_api_key = f.read()
-    else:
-        transifex_api_key = os.getenv('TX_TOKEN', '')
-    return transifex_api_key
+def _get_resources(language: str, weblate_key: str) -> Generator[ResourceLanguageStatistics, None, None]:
+    weblate = Weblate(weblate_key, 'https://hosted.weblate.org/api/')
+    project = Project(weblate, 'https://hosted.weblate.org/api/projects/python-docs/')
+    for component in tqdm(project.list()):
+        try:
+            yield ResourceLanguageStatistics.from_wlc(
+                component.name,
+                TranslationStatistics(
+                    weblate,
+                    f'https://hosted.weblate.org/api/translations/python-docs/{component.slug}/{language}/statistics/'
+                )
+            )
+        except WeblateException as exc:
+            if str(exc) == 'Object not found on the server (maybe operation is not supported on the server)':
+                yield ResourceLanguageStatistics.empty_from_any_wlc(component.name, next(component.statistics()))
+            else:
+                raise
 
 
-def _get_resources() -> list[transifex_api.Resource]:
-    transifex_api.setup(auth=_get_tx_token())
-    return transifex_api.Resource.filter(project=f'o:python-doc:p:{PROJECT_SLUG}').all()
-
-
-def get_resource_language_stats() -> list[ResourceLanguageStatistics]:
-    transifex_api.setup(auth=_get_tx_token())
-    resources = transifex_api.ResourceLanguageStats.filter(
-        project=f'o:python-doc:p:{PROJECT_SLUG}', language=f'l:{LANGUAGE}'
-    ).all()
-    return [ResourceLanguageStatistics.from_api_entry(entry) for entry in resources]
+def get_resource_language_stats(language: str = None, weblate_key: str = None) -> list[ResourceLanguageStatistics]:
+    if not language:
+        language = LANGUAGE
+    if not weblate_key:
+        if not (weblate_key := getenv('KEY')):
+            warning('Not authenticated, you will be heavy throttled')
+    return list(_get_resources(language, weblate_key))
 
 
 def progress_from_resources(resources: Iterable[ResourceLanguageStatistics]) -> float:
@@ -92,5 +113,8 @@ def _check_for_aliases(translators) -> None:
 
 
 def language_switcher(entry: ResourceLanguageStatistics) -> bool:
-    language_switcher_resources_prefixes = ('bugs', 'tutorial', 'library--functions')
+    language_switcher_resources_prefixes = ('bugs', 'tutorial', 'library/functions')
     return any(entry.name.startswith(prefix) for prefix in language_switcher_resources_prefixes)
+
+
+basicConfig(level='INFO')
