@@ -30,7 +30,7 @@ jobs:
       - run: git config --local user.name github-actions[bot]
       - run: python .update-translation.py ${{ matrix.version }}
         env:
-          KEY: ${{ secrets.WEBLATE_KEY }}
+          KEY: ${{ secrets.KEY }}
       - uses: ad-m/github-push-action@master
         with:
           branch: ${{ matrix.version }}
