@@ -9,6 +9,7 @@ from shutil import rmtree
 from subprocess import call, run
 
 from tqdm import tqdm
+from tqdm.contrib.logging import logging_redirect_tqdm
 from wlc import Translation, Weblate, Project, WeblateException, WeblateThrottlingError
 
 
@@ -37,23 +38,24 @@ def _clear_files():
 def _download_translations(language: str, weblate_key: str) -> None:
     weblate = Weblate(weblate_key, 'https://hosted.weblate.org/api/')
     project = Project(weblate, 'https://hosted.weblate.org/api/projects/python-docs/')
-    for component in tqdm(project.list()):
-        if component.is_glossary:
-            continue
-        url = f'https://hosted.weblate.org/api/translations/python-docs/{component.slug}/{language}/'
-        try:
-            content = Translation(weblate, url).download()
-        except WeblateThrottlingError:
-            info(f'Skipped {component.slug} due to throttling')
-        except WeblateException as exc:
-            if str(exc) == 'Object not found on the server (maybe operation is not supported on the server)':
-                info(f"{component.slug} doesn't have a {language} translation")
+    with logging_redirect_tqdm():
+        for component in tqdm(project.list()):
+            if component.is_glossary:
                 continue
-            raise
-        else:
-            path = Path(component.filemask.removeprefix('*/'))
-            path.parent.mkdir(exist_ok=True)
-            path.write_bytes(content)
+            url = f'https://hosted.weblate.org/api/translations/python-docs/{component.slug}/{language}/'
+            try:
+                content = Translation(weblate, url).download()
+            except WeblateThrottlingError:
+                info(f'Skipped {component.slug} due to throttling')
+            except WeblateException as exc:
+                if str(exc) == 'Object not found on the server (maybe operation is not supported on the server)':
+                    info(f"{component.slug} doesn't have a {language} translation")
+                    continue
+                raise
+            else:
+                path = Path(component.filemask.removeprefix('*/'))
+                path.parent.mkdir(exist_ok=True)
+                path.write_bytes(content)
 
 
 def _get_changed_files() -> list[str]:
