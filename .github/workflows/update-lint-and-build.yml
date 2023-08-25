@@ -28,7 +28,7 @@ jobs:
           KEY: ${{ secrets.KEY }}
       - run: git config --local user.email github-actions@github.com
       - run: git config --local user.name github-actions[bot]
-      - run: python .update-translation.py ${{ matrix.version }}
+      - run: python .update-translation.py pl
         env:
           KEY: ${{ secrets.KEY }}
       - uses: ad-m/github-push-action@master
