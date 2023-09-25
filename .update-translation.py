@@ -38,6 +38,7 @@ def _clear_files():
 def _download_translations(language: str, weblate_key: str) -> None:
     weblate = Weblate(weblate_key, 'https://hosted.weblate.org/api/')
     project = Project(weblate, 'https://hosted.weblate.org/api/projects/python-docs/')
+    _validate_language(language, project)
     with logging_redirect_tqdm():
         for component in tqdm(project.list()):
             if component.is_glossary:
@@ -56,6 +57,14 @@ def _download_translations(language: str, weblate_key: str) -> None:
             path = Path(component.filemask.removeprefix('*/'))
             path.parent.mkdir(exist_ok=True)
             path.write_bytes(content)
+
+
+def _validate_language(language: str, project: Project) -> None:
+    for l in project.languages():
+        if l.code == language:
+            break
+    else:
+        raise SystemError(f'{language} is an incorrect language')
 
 
 def _get_changed_files() -> list[str]:

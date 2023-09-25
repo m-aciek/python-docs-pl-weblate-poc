@@ -5,7 +5,7 @@ It has to be run inside the python-docs-pl git root directory.
 from dataclasses import dataclass
 from difflib import SequenceMatcher
 from itertools import combinations
-from logging import warning, basicConfig
+from logging import warning, basicConfig, info
 from os import getenv
 from pathlib import Path
 from typing import Generator, Iterable, Self
@@ -13,6 +13,7 @@ from warnings import warn
 
 from polib import pofile
 from tqdm import tqdm
+from tqdm.contrib.logging import logging_redirect_tqdm
 from wlc import Component, LanguageStats, Project, Statistics, TranslationStatistics, Weblate, WeblateException
 
 LANGUAGE = 'pl'
@@ -54,20 +55,26 @@ class ResourceLanguageStatistics:
 def _get_resources(language: str, weblate_key: str) -> Generator[ResourceLanguageStatistics, None, None]:
     weblate = Weblate(weblate_key, 'https://hosted.weblate.org/api/')
     project = Project(weblate, 'https://hosted.weblate.org/api/projects/python-docs/')
-    for component in tqdm(project.list()):
-        try:
-            yield ResourceLanguageStatistics.from_wlc(
-                component.name,
-                TranslationStatistics(
-                    weblate,
-                    f'https://hosted.weblate.org/api/translations/python-docs/{component.slug}/{language}/statistics/'
-                )
-            )
-        except WeblateException as exc:
-            if str(exc) == 'Object not found on the server (maybe operation is not supported on the server)':
-                yield ResourceLanguageStatistics.empty_from_any_wlc(component.name, next(component.statistics()))
+    _validate_language(language, project)
+    with logging_redirect_tqdm():
+        for component in tqdm(project.list()):
+            if component.is_glossary:
+                continue
+            for translation in component.list():
+                if translation.language.code == language:
+                    yield ResourceLanguageStatistics.from_wlc(component.name, translation.statistics())
+                    break
             else:
-                raise
+                info(f"{component.slug} doesn't have a {language} translation")
+                yield ResourceLanguageStatistics.empty_from_any_wlc(component.name, translation.statistics())
+
+
+def _validate_language(language: str, project: Project):
+    for l in project.languages():
+        if l.code == language:
+            break
+    else:
+        raise SystemError(f'{language} is an incorrect language')
 
 
 def get_resource_language_stats(language: str = None, weblate_key: str = None) -> list[ResourceLanguageStatistics]:
