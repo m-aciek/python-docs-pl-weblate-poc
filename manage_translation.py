@@ -17,7 +17,6 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 from wlc import Component, LanguageStats, Project, Statistics, TranslationStatistics, Weblate, WeblateException
 
 LANGUAGE = 'pl'
-PROJECT_SLUG = 'python-newest'
 
 
 @dataclass
