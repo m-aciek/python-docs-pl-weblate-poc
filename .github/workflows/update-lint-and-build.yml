@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: 3
       - run: sudo apt-get install -y gettext
-      - run: pip install requests cogapp polib blurb git+https://github.com/WeblateOrg/wlc tqdm
+      - run: pip install requests cogapp polib blurb git+https://github.com/WeblateOrg/wlc tqdm git+https://github.com/dateutil/dateutil
       - uses: actions/checkout@master
         with:
           ref: ${{ github.head_ref || github.ref_name }}
