@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [3.12]
+        version: [3.12, 3.11]
     steps:
       - uses: styfle/cancel-workflow-action@main
         with:
@@ -22,7 +22,7 @@ jobs:
       - run: pip install requests cogapp polib blurb git+https://github.com/WeblateOrg/wlc git+https://github.com/jamate16/tqdm@fix-deprecation-warning-python3.12 git+https://github.com/dateutil/dateutil
       - uses: actions/checkout@master
         with:
-          ref: ${{ github.head_ref || github.ref_name }}
+          ref: ${{ matrix.version }}
       - run: git config --local user.email github-actions@github.com
       - run: git config --local user.name github-actions[bot]
       - run: python .update-translation.py pl ${{ matrix.version }}
